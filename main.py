@@ -73,10 +73,8 @@ def show_performance_comparison(pred_kw, depth, sondenzahl, zh_geothermal_probes
 ### HEAT YIELD UI ###
 @st.fragment
 def show_yield_ui(features):
-    if "selected_depth" not in st.session_state:
-        st.session_state.selected_depth = int(features["depth_max"] / 2)
-    if "gesamtsondenzahl" not in st.session_state:
-        st.session_state.gesamtsondenzahl = 5
+    st.session_state.setdefault("selected_depth", int(features["depth_max"] / 2))
+    st.session_state.setdefault("gesamtsondenzahl", 5)
 
     st.markdown("### 🔋 Heat Yield Estimation")
 
@@ -84,7 +82,6 @@ def show_yield_ui(features):
         "Select probe depth (m)",
         min_value=10,
         max_value=int(features["depth_max"]),
-        value=st.session_state.selected_depth,
         step=5,
         key="selected_depth"
     )
@@ -93,7 +90,6 @@ def show_yield_ui(features):
         "Select number of probes",
         min_value=1,
         max_value=10,
-        value=st.session_state.gesamtsondenzahl,
         step=1,
         key="gesamtsondenzahl"
     )
