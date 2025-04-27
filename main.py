@@ -576,6 +576,16 @@ with col2:
                         st.success("✅ Drilling is allowed.")
                     elif "conditions" in restriction_status:
                         st.warning("⚠️ Drilling is allowed with conditions.")
+                        with st.expander("See drilling conditions"):
+                            st.markdown("""
+                            - The borehole must be **lined** to prevent unwanted water flow between different groundwater layers (**Verrohrung**).
+                            - Proper **sealing** must be ensured to prevent contamination and mixing of groundwater layers (**Abdichtung**).
+                            - Drilling may only be allowed to a **specific depth**, not deeper, to avoid penetrating sensitive layers (**Tiefenbegrenzung**).
+
+                            Source: *Planungshilfe Wärmenutzung aus Untergrund und Grundwasser, AWEL 2010*.
+                                        
+                            More information can be found [here](https://www.zh.ch/de/planen-bauen/bauvorschriften/energienutzung-untergrund-wasser/energie-aus-grundwasser.html).
+                            """)
                     else:
                         st.error(f"⛔ Drilling is not allowed.")
 
