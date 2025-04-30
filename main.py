@@ -450,7 +450,7 @@ with col2:
 # UI Layout – Bottom Info
 # ───────────────────────────────
 
-tab1, tab2, tab3 = st.tabs(["ℹ️ About", "⚠️ Limitations", "🧮 Unit Conversions"])
+tab1, tab2, tab3, tab4 = st.tabs(["ℹ️ About", "⚠️ Limitations", "🧮 Unit Conversions", "🎯 Optimization"])
 
 with tab1:
     st.markdown("""
@@ -483,5 +483,16 @@ with tab3:
     - **Annual Energy (kWh/year)**, assumes 2000 full-load hours per year: Power (kW) × 2000  
     - **Annual Energy (MWh/year)**, simple conversion to megawatt-hours: Annual Energy (kWh) ÷ 1000  
       
-    The value of **2000 full-load hours per year** is based on the Swiss standard **SIA 384/6**, which recommends typical operating times for geothermal heat extraction systems in Switzerland.
-""")
+    The value of **2000 full-load hours per year** is based on the Swiss standard **SIA 384/6**, which recommends typical operating times for geothermal heat extraction systems in Switzerland.¨         
+    """)
+
+with tab4:
+    st.markdown("""
+    The optimizer evaluates hundreds of possible configurations within the legal drilling depth limit and allowed probe count (limited to 10, representative of most residential installations).
+    It obtains the best results of **heat yield per probe**, adjusted to prevent single-probe systems (which return the highest yield per probe), while penalizing too large installations.
+    It uses a scoring system for each combination, rewarding systems with 2–6 probes over 1, to discourage high-probe-count and high-depth combinations.
+                
+    The results correspond to **high comparative performances** and **high financial incentive** values for the installation.
+                
+    Ultimately, **probe count** is a project-dependent parameter, limited by parcel surface and particular heat needs.
+    """)
