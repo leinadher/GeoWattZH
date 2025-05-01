@@ -22,13 +22,10 @@ from scripts.ui_yield import show_yield_ui
 # App Setup
 # ───────────────────────────────
 
-st.set_page_config(
+st.set_page_config(layout="wide"
     page_title="GeoWatt ZH",
     page_icon="⚡",
-    layout="wide"
-)
-
-st.set_page_config(layout="wide")
+    layout="wide")
 
 svg_icon = load_svg_icon("assets/geowatt.svg")
 
