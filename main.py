@@ -22,7 +22,7 @@ from scripts.ui_yield import show_yield_ui
 # App Setup
 # ───────────────────────────────
 
-st.set_page_config(layout="wide"
+st.set_page_config(
     page_title="GeoWatt ZH",
     page_icon="⚡",
     layout="wide")
