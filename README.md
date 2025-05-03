@@ -3,7 +3,7 @@
 **Author:** Daniel Herrera  
 **Date:** 03/05/2025  
 
-<img src="images/banner.png" alt="GeoWatt ZH Banner"/>
+<img src="assets/banner.png" alt="GeoWatt ZH Banner"/>
 
 ---
 
