@@ -52,7 +52,6 @@ GeoWatt ZH is built entirely on publicly available datasets and services, includ
 
 - 🗺️ **Wärmenutzungsatlas Zürich (GIS Portal)** – depth limitations, restrictions, and borehole data.
 - 🌐 **OpenStreetMap Nominatim API** – address and coordinate conversion.
-- 📊 **Canton Zürich geothermal installation records** – historical data used for training and benchmarking.
 
 ---
 
