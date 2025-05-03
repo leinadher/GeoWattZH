@@ -1,4 +1,4 @@
-# 🌍 GeoWatt ZH – Geothermal Potential Explorer for Canton Zürich
+# ⚡ GeoWatt ZH – Geothermal Potential Explorer for Canton Zürich
 
 **Author:** Daniel Herrera  
 **Date:** 03/05/2025  
