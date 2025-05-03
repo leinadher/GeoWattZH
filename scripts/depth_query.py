@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 def get_depth_info(lat, lon):
     """Fetches elevation and maximum allowed depth from Zürich maps API given WGS84 coordinates."""
     
-    # Convert WGS84 to LV95 (Swiss Coordinate System)
+    # Convert WGS84 to LV95
     wgs84_to_lv95 = pyproj.Transformer.from_crs("EPSG:4326", "EPSG:2056", always_xy=True)
     lv95_x, lv95_y = wgs84_to_lv95.transform(lon, lat)
     
@@ -18,24 +18,24 @@ def get_depth_info(lat, lon):
     
     if response.status_code != 200:
         print("⚠️ Error fetching data from Zürich maps.")
-        return None, None  # Return None for both values if the request fails
+        return None, None
 
     # Parse HTML response
     soup = BeautifulSoup(response.text, "html.parser")
     text = soup.get_text()
 
-    # Extract elevation (Höhe: 416.1 m)
+    # Extract elevation
     elevation_match = re.search(r"Höhe:\s*([\d.]+)\s*m", text)
     elevation = float(elevation_match.group(1)) if elevation_match else None
 
-    # Extract max depth (e.g., "244 Meter ab Terrain")
+    # Extract max depth
     depth_match = re.search(r"(\d+)\s*Meter ab Terrain", text)
     depth_max = float(depth_match.group(1)) if depth_match else None  
 
-    # Logic for default depth assignment
+    # Default depth assignment
     if elevation is None:
-        depth_max = None  # Outside Zürich → depth should be None
+        depth_max = None  # Outside Zürich depth should be None
     elif depth_max is None:
-        depth_max = 400  # Inside Zürich but no depth found → default to 400
+        depth_max = 400  # Inside Zürich but no depth found default to 400
 
     return elevation, depth_max
