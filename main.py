@@ -467,15 +467,17 @@ with tab1:
     The tool is intended as a **proof of concept**, designed to simplify access to public datasets and make geothermal planning more accessible to a broader audience, and does not replace case-specific technical assessments.
     """)
 
-
 with tab2:
     st.markdown("""
-    While **GeoWatt ZH** provides helpful spatial insights, it is subject to some limitations:
-    - The data was extracted and integrated on the 28.03.2025.
-    - It only includes data **within the boundaries of the Canton of Zürich**; boreholes in adjacent cantons or regions are not taken into account.
-    - Subsurface variables, including **geological variability, thermal regeneration, and hydrogeological dynamics**, is **not modelled** in this version.
-    - The source dataset includes both **installed and approved boreholes** without distinguishing between the two, which may affect interpretation of thermal density.
-    - Legal regulations and zoning restrictions are subject to change. Users should **always consult official cantonal authorities** before making planning decisions.
+    While **GeoWatt ZH** provides helpful spatial insights, it is subject to important limitations:
+    
+    - The data was extracted and integrated on 28.03.2025.
+    - It only includes data **within the boundaries of the Canton of Zürich**; boreholes in neighboring cantons or municipalities are not considered.
+    - Subsurface factors such as **geological heterogeneity, thermal regeneration, and hydrogeological flows** are **not modeled** in this version.
+    - The underlying data includes both **approved and installed boreholes**, without distinguishing between the two, which may affect thermal density estimates.
+    - The machine learning model offers **approximate predictions** based on historical data and spatial patterns. It does **not guarantee actual performance** or subsidy eligibility. No liability is assumed for incorrect or overestimated values.
+    - GeoWatt ZH does **not replace a site-specific technical evaluation** and should be considered a preliminary planning tool.
+    - Legal restrictions and zoning regulations may change over time. Users should **always verify conditions with official cantonal authorities** before proceeding with planning or installation.
     """)
 
 with tab3:
