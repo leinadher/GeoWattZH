@@ -75,7 +75,7 @@ def load_hex_layer():
     return hex_gdf.to_crs(epsg=2056)
 
 # Load all cached data
-with st.spinner('⏳ Loading data...'):
+with st.spinner('Loading data...'):
     boundary = load_boundary()
 
     restrictions_gdf = load_restrictions()
@@ -367,7 +367,7 @@ with col1:
 
 with col2:
     if st.session_state.clicked_coords:
-        with st.spinner("⏳ Processing location..."):
+        with st.spinner("Processing location..."):
             lat, lon = st.session_state.clicked_coords
             location_name = reverse_geocode(lat, lon)
             with st.container():
@@ -390,7 +390,7 @@ with col2:
 
         # Run analysis if triggered
         if st.session_state.get("trigger_analysis", False):
-            with st.spinner("⏳ Processing..."):
+            with st.spinner("Processing..."):
                 time.sleep(0.5)
                 restriction_status, features = compute_features(
                     lat, lon,
@@ -465,19 +465,22 @@ with tab1:
     Suitability is estimated with a machine learning algorithm using open spatial data and official records from the [Kanton Zürich Wärmenutzungsatlas](https://maps.zh.ch/?offlayers=bezirkslabels&scale=320000&srid=2056&topic=AwelGSWaermewwwZH&x=2692500&y=1252500).
 
     The tool is intended as a **proof of concept**, designed to simplify access to public datasets and make geothermal planning more accessible to a broader audience, and does not replace case-specific technical assessments.
+    
+    **Author**: Daniel Herrera  
+    **Source Code**: [GitHub - GeoWattZH](https://github.com/leinadher/GeoWattZH)            
     """)
 
 with tab2:
     st.markdown("""
-    While **GeoWatt ZH** provides helpful spatial insights, it is subject to important limitations:
-    
-    - The data was extracted and integrated on 28.03.2025.
-    - It only includes data **within the boundaries of the Canton of Zürich**; boreholes in neighboring cantons or municipalities are not considered.
-    - Subsurface factors such as **geological heterogeneity, thermal regeneration, and hydrogeological flows** are **not modeled** in this version.
-    - The underlying data includes both **approved and installed boreholes**, without distinguishing between the two, which may affect thermal density estimates.
-    - The machine learning model offers **approximate predictions** based on historical data and spatial patterns. It does **not guarantee actual performance** or subsidy eligibility. No liability is assumed for incorrect or overestimated values.
-    - GeoWatt ZH does **not replace a site-specific technical evaluation** and should be considered a preliminary planning tool.
-    - Legal restrictions and zoning regulations may change over time. Users should **always verify conditions with official cantonal authorities** before proceeding with planning or installation.
+    **GeoWatt ZH** provides helpful spatial insights, but has the following limitations:
+
+    - Data is from **28.03.2025**.
+    - Only covers the **Canton of Zürich**.
+    - **Geological and hydrogeological features** are not explicitly modeled.
+    - Borehole data includes both **approved and installed** sites.
+    - Predictions are **approximate**, and subject to modeling error.
+    - Does **not guarantee system performance** or legal compliance regarding allowability and subsidies.
+    - Always confirm with **official cantonal authorities** before planning.
     """)
 
 with tab3:
