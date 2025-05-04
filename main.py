@@ -377,7 +377,7 @@ with col2:
             st.markdown(f"##### Coordinates: `{lat:.5f}, {lon:.5f}`")
 
         # Analysis button
-        if st.button("🔍 Analyse Potential"):
+        if st.button("🔍 Analyze Potential"):
             st.session_state.trigger_analysis = True
 
             # Reset downstream session state
