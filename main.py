@@ -491,7 +491,7 @@ with tab3:
     - **Annual Energy (kWh/year)**, assumes 2000 full-load hours per year: Power (kW) × 2000  
     - **Annual Energy (MWh/year)**, simple conversion to megawatt-hours: Annual Energy (kWh) ÷ 1000  
       
-    The value of **2000 full-load hours per year** is based on the Swiss standard **SIA 384/6**, which recommends typical operating times for geothermal heat extraction systems in Switzerland.¨         
+    The value of **2000 full-load hours per year** is based on the Swiss standard **SIA 384/6**, which recommends typical operating times for geothermal heat extraction systems in Switzerland.         
     """)
 
 with tab4:
