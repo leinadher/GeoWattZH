@@ -41,7 +41,7 @@ def show_yield_ui(features, zh_geothermal_probes_gdf):
 
     with col2:
         if st.button("🎯 Optimize Configuration"):
-            with st.spinner("⏳ Optimizing..."):
+            with st.spinner("Optimizing..."):
                 result = optimize_yield(features)
 
                 st.session_state.optimized_depth = result["depth"]
