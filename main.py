@@ -18,6 +18,8 @@ from scripts.geocode import reverse_geocode
 from scripts.ui_components import load_svg_icon, show_performance_comparison
 from scripts.ui_yield import show_yield_ui
 
+gpd.options.io_engine = "fiona" # to ensure it works in Streamlit cloud!
+
 # ───────────────────────────────
 # App Setup
 # ───────────────────────────────
